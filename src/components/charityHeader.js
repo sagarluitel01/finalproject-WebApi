@@ -17,14 +17,14 @@ class MovieHeader extends Component {
                 <Navbar>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            Movie App
+                            Vacuum Master
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav>
                         <LinkContainer to="/charityList">
                             <NavItem eventKey={1} disabled={!this.props.loggedIn}>Charity List </NavItem>
                         </LinkContainer>
-                        <LinkContainer to={'/charity/'+ (this.props.selectedCharity ? this.props.selectedCharity.Name : '')}>
+                        <LinkContainer to={'/Charity/Get/'+ (this.props.selectedCharitie ? this.props.selectedCharitie.charityName: '')}>
                             <NavItem eventKey={2} disabled={!this.props.loggedIn}>Charity Detail</NavItem>
                         </LinkContainer>
                         <LinkContainer to="/signin">
@@ -33,7 +33,7 @@ class MovieHeader extends Component {
                     </Nav>
                 </Navbar>
                 <header className="App-header">
-                    <h1 className="App-title">{(this.props.selectedCharity ? this.props.selectedCharity.Name : '')}</h1>
+                    <h1 className="App-title">{(this.props.selectedCharitie ? this.props.selectedCharitie.charityName : '')}</h1>
                 </header>
             </div>
 
@@ -45,7 +45,7 @@ const mapStateToProps = state => {
     return {
         loggedIn: state.auth.loggedIn,
         username: state.auth.username,
-        //selectedMovie: state.movie.selectedMovie,
+        selectedCharitie: state.charity.selectedCharitie,
     }
 }
 

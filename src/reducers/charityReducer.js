@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
         case constants.SET_CHARITY:
             updated['selectedCharity'] = action.selectedCharity;
             return updated;
-        case constants.FETCH_CHARITY:
+        case constants.FETCH_CHARITIE:
             updated['selectedCharity'] = action.selectedCharity;
             return updated;
         default:
