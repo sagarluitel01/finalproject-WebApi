@@ -27,6 +27,9 @@ class CharityHeader extends Component {
                         <LinkContainer to={'/Charity/Get/'+ (this.props.selectedCharitie ? this.props.selectedCharitie._id: '')}>
                             <NavItem eventKey={2} disabled={!this.props.loggedIn}>Charity Detail</NavItem>
                         </LinkContainer>
+                        <LinkContainer to="/productList">
+                            <NavItem eventKey={1} disabled={!this.props.loggedIn}>Product List </NavItem>
+                        </LinkContainer>
                         <LinkContainer to="/signin">
                             <NavItem eventKey={3}>{this.props.loggedIn ? <button onClick={this.logout.bind(this)}>Logout</button> : 'Login'}</NavItem>
                         </LinkContainer>
