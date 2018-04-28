@@ -16,23 +16,6 @@ class Charity extends Component {
     }
 
     render() {
-        /*     const ActorInfo = ({actors}) => {
-                 return actors.map((actor, i) =>
-                     <p key={i}>
-                         <b>{actor.actorName}</b> {actor.characterName}
-                     </p>
-                 );
-             };
-
-             const ReviewInfo = ({reviews}) => {
-                 return reviews.map((review, i) =>
-                     <p key={i}>
-                     <b>{review.username}</b> {review.review}
-                         <Glyphicon glyph={'star'} /> {review.rating}
-                     </p>
-                 );
-             }*/
-
         const DetailInfo = ({currentCharity}) => {
             if (!currentCharity) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
