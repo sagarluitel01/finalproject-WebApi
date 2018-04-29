@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchProducts } from '../actions/productActions';
+import { fetchProducts } from '../actions/productActions'
 import { setProduct } from '../actions/productActions';
 import {connect} from "react-redux";
 import { Image } from 'react-bootstrap'
@@ -9,7 +9,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 
 //require a callback function to be sent to MovieList to update the header subtitle
 
-class productList extends Component {
+class ProductList extends Component {
     constructor(props) {
         super(props);
         this.handleSelect = this.handleSelect.bind(this);
@@ -22,7 +22,7 @@ class productList extends Component {
 
     handleSelect(selectedIndex, e) {
         const {dispatch} = this.props;
-        dispatch(setProduct(this.props.product[selectedIndex]));
+        dispatch(setProduct(this.props.products[selectedIndex]));
     }
 
     handleClick = (product) => {
@@ -66,4 +66,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(productList);
+export default connect(mapStateToProps)(ProductList);

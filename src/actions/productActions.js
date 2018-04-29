@@ -5,7 +5,7 @@ import runtimeEnv from '@mars/heroku-js-runtime-env';
 function productsFetched(products){
     return {
         type: actionTypes.FETCH_PRODUCTS,
-        Products: products
+        products: products
     }
 }
 

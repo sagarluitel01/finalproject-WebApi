@@ -28,15 +28,19 @@ class CharityHeader extends Component {
                             <NavItem eventKey={2} disabled={!this.props.loggedIn}>Charity Detail</NavItem>
                         </LinkContainer>
                         <LinkContainer to="/productList">
-                            <NavItem eventKey={1} disabled={!this.props.loggedIn}>Product List </NavItem>
+                            <NavItem eventKey={3} disabled={!this.props.loggedIn}>Product List </NavItem>
+                        </LinkContainer>
+                        <LinkContainer to={'/Product/GetAll'+ (this.props.selectedProduct ? this.props.selectedProduct._id: '')}>
+                            <NavItem eventKey={4} disabled={!this.props.loggedIn}>Product Detail</NavItem>
                         </LinkContainer>
                         <LinkContainer to="/signin">
-                            <NavItem eventKey={3}>{this.props.loggedIn ? <button onClick={this.logout.bind(this)}>Logout</button> : 'Login'}</NavItem>
+                            <NavItem eventKey={5}>{this.props.loggedIn ? <button onClick={this.logout.bind(this)}>Logout</button> : 'Login'}</NavItem>
                         </LinkContainer>
                     </Nav>
                 </Navbar>
                 <header className="App-header">
                     <h1 className="App-title">{(this.props.selectedCharitie ? this.props.selectedCharitie.Name : '')}</h1>
+                    <h2 className="App-title">{(this.props.selectedProduct ? this.props.selectedProduct.Name : '')}</h2>
                 </header>
             </div>
 
@@ -49,6 +53,7 @@ const mapStateToProps = state => {
         loggedIn: state.auth.loggedIn,
         username: state.auth.username,
         selectedCharitie: state.charity.selectedCharitie,
+        selectedProduct: state.product.selectedProduct
     }
 }
 
