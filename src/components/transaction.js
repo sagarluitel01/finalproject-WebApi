@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
-import { submitRegister } from '../actions/authActions';
+//import { submitRegister } from '../actions/authActions';
 import { connect } from 'react-redux';
 import { Col, Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
-import {submitTransactionDonate} from "../actions/TransactionActions";
+import {submitTransaction} from "../actions/TransactionActions";
 
 class Transaction extends Component {
 
@@ -41,7 +41,7 @@ class Transaction extends Component {
 
     transactionDonate(){
         const {dispatch} = this.props;
-        dispatch(submitTransactionDonate(this.state.details));
+        dispatch(submitTransaction(this.state.details));
     }
 
     showDonate() {
@@ -62,6 +62,9 @@ class Transaction extends Component {
         return (
 
             <Form horizontal>
+                <div>
+                    <strong> Transaction </strong>
+                </div>
                 <FormGroup controlId="Name">
                     <Col componentClass={ControlLabel} sm={2}>
                         Name:
@@ -88,12 +91,6 @@ class Transaction extends Component {
                         <FormControl onChange={this.updateDetails} value={this.state.details.password} type="text" placeholder="ExpDate" />
                     </Col>
                 </FormGroup>
-
-                <FormGroup>
-                    <button onClick={this.showLogin.bind(this)}>Login</button><button onClick={this.showReg.bind(this)}>Register</button>
-                    { this.state.toggleReg ? <Register /> : <Login /> }
-                </FormGroup>
-
 
                 <FormGroup>
                     <Col smOffset={2} sm={10}>

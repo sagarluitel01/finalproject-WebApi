@@ -8,6 +8,7 @@ import Charity from './components/charity';
 import Authentication from './components/authentication';
 import {HashRouter,Route} from 'react-router-dom';
 import { Provider } from 'react-redux'
+import Transaction from './components/transaction';
 import store from './stores/store'
 
 //add routing configuration
@@ -24,6 +25,7 @@ class App extends Component {
                         <Route path="/productList" render={()=><ProductList />}/>
                         <Route path="/Product/Get/:produtName" render={()=><Product />}/>
                         <Route path="/Charity/Get/:charityName" render={()=><Charity />}/>
+                        <Route path="/Transaction/Save" render={()=><Transaction />}/>
                         <Route path="/signin" render={()=><Authentication />}/>
                     </div>
                 </HashRouter>
