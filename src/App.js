@@ -3,6 +3,7 @@ import './App.css';
 import CharityHeader from './components/charityHeader';
 import CharityList from './components/charityList';
 import ProductList from './components/productList';
+import Product from './components/product';
 import Charity from './components/charity';
 import Authentication from './components/authentication';
 import {HashRouter,Route} from 'react-router-dom';
@@ -21,6 +22,7 @@ class App extends Component {
                         <Route exact path="/" render={()=><CharityList />}/>
                         <Route path="/charityList" render={()=><CharityList />}/>
                         <Route path="/productList" render={()=><ProductList />}/>
+                        <Route path="/Product/Get/:produtName" render={()=><Product />}/>
                         <Route path="/Charity/Get/:charityName" render={()=><Charity />}/>
                         <Route path="/signin" render={()=><Authentication />}/>
                     </div>

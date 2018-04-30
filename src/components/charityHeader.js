@@ -40,7 +40,6 @@ class CharityHeader extends Component {
                 </Navbar>
                 <header className="App-header">
                     <h1 className="App-title">{(this.props.selectedCharitie ? this.props.selectedCharitie.Name : '')}</h1>
-                    <h2 className="App-title">{(this.props.selectedProduct ? this.props.selectedProduct.Name : '')}</h2>
                 </header>
             </div>
 
@@ -52,8 +51,8 @@ const mapStateToProps = state => {
     return {
         loggedIn: state.auth.loggedIn,
         username: state.auth.username,
-        selectedCharitie: state.charity.selectedCharitie,
-        selectedProduct: state.product.selectedProduct
+       // selectedCharitie: state.charity.selectedCharitie,
+       // selectedProduct: state.product.selectedProduct
     }
 }
 
